@@ -2,4 +2,4 @@
 
 <p class="section-lead">Slack・Google Workspaceを日常業務で活用</p>
 
-現業務でもSlackとGoogle Workspaceを利用し、関係者とのコミュニケーションや情報共有を行っています。
+現在の業務でもSlackとGoogle Workspaceを日常的に使い、顧客・チームとのコミュニケーションと、資料や議事の共有を行っています。
