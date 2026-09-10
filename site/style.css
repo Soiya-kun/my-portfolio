@@ -98,3 +98,25 @@ h3[id] { scroll-margin-top: 32px; }
 .requirement-section h3 { font-size: 20px; font-weight: 700; line-height: 1.65; margin: 36px 0 14px; }
 .requirement-section h4 { font-size: 16px; font-weight: 700; line-height: 1.7; margin: 26px 0 10px; }
 .requirement-section .section-lead + a + h3, .requirement-section .section-lead + h3 { margin-top: 20px; }
+
+/* Evidence panels: qualitative prose stays open, concrete cases open on demand. */
+details.evidence { border: 1px solid var(--line); border-radius: 4px; background: #f7f9fd; margin-block: 34px; }
+details.evidence > summary { display: flex; align-items: center; gap: 12px; padding: 18px 22px; font-size: 14px; }
+details.evidence > summary::-webkit-details-marker { display: none; }
+details.evidence > summary { list-style: none; }
+details.evidence > summary::before { content: "＋"; flex: none; width: 22px; height: 22px; display: inline-grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 12px; line-height: 1; }
+details.evidence[open] > summary::before { content: "−"; }
+details.evidence[open] > summary { border-bottom: 1px solid var(--line); }
+.evidence-body { padding: 6px 24px 26px; }
+.evidence-body > :first-child { margin-top: 16px; }
+.evidence-body > :last-child { margin-bottom: 0; }
+.evidence-body h4 { font-size: 16px; font-weight: 700; line-height: 1.7; margin: 28px 0 10px; }
+.evidence-body > h4:first-child { margin-top: 16px; }
+.evidence-body h5 { font-size: 14px; font-weight: 700; line-height: 1.7; margin: 22px 0 8px; }
+.evidence-body p, .evidence-body li { font-size: 14px; line-height: 1.95; }
+.evidence-body ul, .evidence-body ol { padding-left: 24px; }
+
+.evidence-body .approach-body { padding: 0 0 20px; background: none; }
+.evidence-body details { border: 0; border-top: 1px solid var(--line); margin-block: 20px 0; }
+.evidence-body details > summary { padding: 16px 0; }
+@media(max-width:640px) { details.evidence > summary { padding: 16px; } .evidence-body { padding: 4px 16px 22px; } }
