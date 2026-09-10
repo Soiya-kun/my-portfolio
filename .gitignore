@@ -1,0 +1,12 @@
+/.private/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/node_modules/
+/cdk.out/
+/dist/
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
