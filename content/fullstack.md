@@ -2,9 +2,15 @@
 
 <p class="section-lead">必要なものを、フロントからバックまで作る</p>
 
+<details class="evidence"><summary>このスキルの詳細</summary>
+<div class="evidence-body">
+
 React / Goを中心に、フロントエンドとバックエンドの双方を担当してきました。画面だけ、APIだけと担当を区切らず、データの保持と更新から、そのシステムが動く環境まで見ています。
 
 どこを自分が実装するかは、そのとき何が足りないかで決めています。担当領域を先に決めてから仕事を選ぶのではなく、完成に必要な範囲へ手を伸ばしてきた結果として、画面からインフラまでが守備範囲になりました。
+
+</div>
+</details>
 
 <details class="evidence"><summary>このスキルにまつわる実績：担当した実装範囲とインフラ構成</summary>
 <div class="evidence-body">

@@ -100,7 +100,7 @@ h3[id] { scroll-margin-top: 32px; }
 .requirement-section .section-lead + a + h3, .requirement-section .section-lead + h3 { margin-top: 20px; }
 
 /* Evidence panels: qualitative prose stays open, concrete cases open on demand. */
-details.evidence { border: 1px solid var(--line); border-radius: 4px; background: #f7f9fd; margin-block: 34px; }
+details.evidence { border: 1px solid var(--line); border-radius: 4px; background: #f7f9fd; margin-block: 12px; }
 details.evidence > summary { display: flex; align-items: center; gap: 12px; padding: 18px 22px; font-size: 14px; }
 details.evidence > summary::-webkit-details-marker { display: none; }
 details.evidence > summary { list-style: none; }
@@ -124,3 +124,5 @@ details.evidence[open] > summary { border-bottom: 1px solid var(--line); }
 /* Profile photo beside the name in the hero. */
 .identity .avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 18px; border: 2px solid rgba(255,255,255,.28); }
 @media(max-width:640px) { .identity .avatar { width: 64px; height: 64px; display: block; margin: 0 0 14px; } }
+/* Markdown wraps a lone anchor line in <p>; keep it from adding space between panels. */
+.requirement-section > p:has(> a[id]:only-child) { margin: 0; }

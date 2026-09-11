@@ -1,6 +1,11 @@
 <h2 class="requirement-heading"><span class="requirement-number">06</span>ソフトウェアエンジニアとしての実務経験5年以上</h2>
 
-### 経歴と役割
+<p class="section-lead">情報システム部門と受託開発の両方で、実務を積んできた</p>
+
+<details class="evidence"><summary>このスキルの詳細</summary>
+<div class="evidence-body">
+
+#### 経歴と役割
 
 - **2013年〜2017年**：神戸大学 理学部 物理学科
 - **その後の2年間**：神戸大学大学院 物理専攻
@@ -11,6 +16,9 @@
 - **2023年1月〜現在**：精和工業所を副業で支援
 
 現在の中心は、PMとリードエンジニアの両方を担う仕事です。顧客との合意形成と技術面の責任をつなぎ、設計・実装まで関わっています。
+
+</div>
+</details>
 
 <details class="evidence"><summary>このスキルにまつわる実績：創業期からPMの進め方を標準化した経緯</summary>
 <div class="evidence-body">
