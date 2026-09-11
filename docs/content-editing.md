@@ -14,7 +14,6 @@
 | 案件チャートの説明 | content/projects.md |
 | 案件期間・担当・技術 | content/projects.psv |
 | 継続中の基準日 | content/projects-config.json |
-| コラム | content/columns.md |
 
 ```powershell
 npm run build
@@ -25,7 +24,6 @@ npm run watch:content
 生成後はブラウザを再読み込みしてください。監視中も自動リロードは行いません。
 通常のMarkdown（見出し、段落、箇条書き、リンク）を使えます。装飾用HTMLと詳細開閉部分は一部そのまま残しています。`<a id="...">` はページ内リンクの参照先なので維持してください。タイトル・段落は自由に書き換えられます。
 
-コラムは `content/columns.md` の該当見出しの下に本文を書き、執筆予定を削除してください。
 
 ## 定性の説明と実績の分け方
 各要件セクションは「定性的な説明を常に表示し、具体的な実績は開いて読む」構成です。実績は次の形で本文の最後に置きます。
