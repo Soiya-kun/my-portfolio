@@ -1,6 +1,6 @@
 # 技術と合意形成、<br>両方に責任を持つ。
 
-<p class="identity">伊藤 誠也 <span>PM ＆ エンジニア</span></p>
+<p class="identity"><img class="avatar" src="profile.jpg" alt="" width="72" height="72">伊藤 誠也 <span>PM ＆ エンジニア</span></p>
 
 PM兼リードエンジニアとして、顧客との折衝から設計・実装までを担っています。技術面の責任を持ったまま顧客と向き合い、プロジェクトを前に進める合意形成をします。
 
