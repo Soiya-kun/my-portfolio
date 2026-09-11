@@ -120,3 +120,7 @@ details.evidence[open] > summary { border-bottom: 1px solid var(--line); }
 .evidence-body details { border: 0; border-top: 1px solid var(--line); margin-block: 20px 0; }
 .evidence-body details > summary { padding: 16px 0; }
 @media(max-width:640px) { details.evidence > summary { padding: 16px; } .evidence-body { padding: 4px 16px 22px; } }
+
+/* Profile photo beside the name in the hero. */
+.identity .avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 18px; border: 2px solid rgba(255,255,255,.28); }
+@media(max-width:640px) { .identity .avatar { width: 64px; height: 64px; display: block; margin: 0 0 14px; } }
