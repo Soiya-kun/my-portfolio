@@ -46,7 +46,7 @@ PMとしては、自分が慣れた進め方に頼った結果、合意形成に
 </div>
 </details>
 
-<details class="evidence"><summary>実績：二つの現場で引き受けてきた改善</summary>
+<details class="evidence"><summary>実績：二つの現場での取り組みと、そこで得た学び</summary>
 <div class="evidence-body">
 
 #### Digeon：人手も型もない状態から、開発とプロジェクト運営の標準化を担う
