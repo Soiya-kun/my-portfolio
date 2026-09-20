@@ -126,3 +126,11 @@ details.evidence[open] > summary { border-bottom: 1px solid var(--line); }
 @media(max-width:640px) { .identity .avatar { width: 64px; height: 64px; display: block; margin: 0 0 14px; } }
 /* Markdown wraps a lone anchor line in <p>; keep it from adding space between panels. */
 .requirement-section > p:has(> a[id]:only-child) { margin: 0; }
+
+/* Keep the nav reachable at any scroll position, so there is always a way back up. */
+header { position: sticky; top: 0; z-index: 5; background: #fff; padding-block: 16px; }
+section, section > a[id], h3[id] { scroll-margin-top: 92px; }
+@media(max-width:640px){
+  header { padding-block: 12px; }
+  section, section > a[id], h3[id] { scroll-margin-top: 80px; }
+}
