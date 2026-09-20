@@ -24,7 +24,7 @@
 </div>
 </details>
 
-<details class="evidence"><summary>実績：未知の領域を学び直して納品まで進めた事例</summary>
+<details class="evidence"><summary>実績：不得意な領域の引き継ぎと、確認方法の学び直し</summary>
 <div class="evidence-body">
 
 #### 得意でなかったアルゴリズムとインフラを引き継ぎ、納品する

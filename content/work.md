@@ -34,7 +34,7 @@
 </div>
 </details>
 
-<details class="evidence"><summary>実績：手を動かした先に残ったもの</summary>
+<details class="evidence"><summary>実績：それぞれの仕事を、具体的に書いている項目</summary>
 <div class="evidence-body">
 
 ここで挙げた仕事の多くは、他の項目で具体的に書いています。
