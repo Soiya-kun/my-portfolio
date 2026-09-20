@@ -8,7 +8,7 @@
 
 [案件履歴](#projects)
 
-<details class="evidence"><summary>このスキルにまつわる実績：規模ごとの担当範囲と、AI活用で3案件を並行した事例</summary>
+<details class="evidence"><summary>実績：規模ごとの担当範囲と、AI活用で3案件を並行した事例</summary>
 <div class="evidence-body">
 
 #### 規模に応じて、担当の比重を変える

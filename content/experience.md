@@ -12,7 +12,7 @@
 - **2023年1月〜現在**：株式会社Digeon DX事業部に正社員として勤務
 - **2023年1月〜現在**：精和工業所を副業で支援
 
-<details class="evidence"><summary>このスキルにまつわる実績：創業期からPMの進め方を標準化した経緯</summary>
+<details class="evidence"><summary>実績：創業期からPMの進め方を標準化した経緯</summary>
 <div class="evidence-body">
 
 #### 3人を中心とする体制で、複数案件を回す

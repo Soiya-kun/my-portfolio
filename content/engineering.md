@@ -8,7 +8,7 @@ AIに任せる範囲は、モデルの進化に応じて広げてきました。
 
 その責任を、AIが書くすべてのコードを読むことで果たすのは現実的ではありません。そこで、GoのクリーンアーキテクチャとDDDを土台に、業務判断はdomain、手順はinteractorに集める規則を定め、その構造を固有のCIで検査しています。人が読むべき範囲を絞ったまま保つことで、AIの成果物が人間の手に負えるものであり続けるようにしています。
 
-<details class="evidence"><summary>このスキルの詳細</summary>
+<details class="evidence"><summary>詳細を読む</summary>
 <div class="evidence-body">
 
 #### 業務の意味と実装が一致するかは、人が見届ける
@@ -36,7 +36,7 @@ interactorで処理の順序と呼び出される業務判断を追い、その�
 </div>
 </details>
 
-<details class="evidence"><summary>このスキルにまつわる実績：AI活用の実務と、確認方法・設計規則の中身</summary>
+<details class="evidence"><summary>実績：AI活用の実務と、確認方法・設計規則の中身</summary>
 <div class="evidence-body">
 
 #### PoCから実装まで、AIを開発の実務に組み込む
