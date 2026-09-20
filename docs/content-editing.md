@@ -9,7 +9,7 @@
 | 志望動機 | content/motivation.md |
 | PMと合意形成 | content/collaboration.md |
 | 学歴・職歴 | content/experience.md |
-| 課題解決（準備中） | content/work.md |
+| 課題解決・自ら手を動かした範囲 | content/work.md |
 | 仮説検証・RPA・現場改善 | content/hypothesis.md |
 | 技術設計・AI開発 | content/engineering.md |
 | 案件チャートの説明 | content/projects.md |
