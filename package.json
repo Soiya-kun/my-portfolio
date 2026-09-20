@@ -3,9 +3,9 @@
   "private": true,
   "scripts": {
     "check": "npm run build && node scripts/check-gantt.mjs && tsc --noEmit && node scripts/check-private.mjs",
-    "synth": "npm run build && cdk synth",
-    "diff": "npm run build && cdk diff",
-    "deploy": "npm run check && cdk deploy",
+    "synth": "npm run build && cdk synth --all",
+    "diff": "npm run build && cdk diff --all",
+    "deploy": "npm run check && cdk deploy --all",
     "private:init": "node scripts/private.mjs",
     "build": "node scripts/build-site.mjs",
     "watch:content": "node scripts/watch-site.mjs"
