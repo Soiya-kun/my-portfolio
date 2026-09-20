@@ -6,7 +6,7 @@
 
 得意ではなかったアルゴリズムやインフラを途中で引き継いだ案件でも、AIを活用して学び直し、納品まで進めています。政治・政策の知識はこれから深める段階ですが、担当する問題が決まれば、同じように判断と行動に必要なところまで理解を深めます。
 
-<details class="evidence"><summary>このスキルの詳細</summary>
+<details class="evidence"><summary>詳細を読む</summary>
 <div class="evidence-body">
 
 #### 設計と納品に責任を持つから、技術を学ぶ
@@ -24,7 +24,7 @@
 </div>
 </details>
 
-<details class="evidence"><summary>このスキルにまつわる実績：未知の領域を学び直して納品まで進めた事例</summary>
+<details class="evidence"><summary>実績：未知の領域を学び直して納品まで進めた事例</summary>
 <div class="evidence-body">
 
 #### 得意でなかったアルゴリズムとインフラを引き継ぎ、納品する

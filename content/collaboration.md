@@ -8,7 +8,7 @@ PMとリードエンジニアを兼ねる中で培ったのは、顧客と開発
 
 そこから、キックオフ前に相手方PMと進め方そのものを合意するやり方に改めました。確認すべき項目の全量とセッションのペースを先に合わせ、計画と実績をアプローチ図で共有し続けます。その結果、経験の浅いPMでも、共有した情報を根拠に顧客と交渉できるようになりました。
 
-<details class="evidence"><summary>このスキルの詳細</summary>
+<details class="evidence"><summary>詳細を読む</summary>
 <div class="evidence-body">
 
 #### 共有するのは、合意・未決・予定と実績のずれ
@@ -59,7 +59,7 @@ PMとリードエンジニアを兼ねる中で培ったのは、顧客と開発
 
 <a id="pm-case"></a>
 
-<details class="evidence"><summary>このスキルにまつわる実績：合意形成の失敗と、そこから確立した進め方</summary>
+<details class="evidence"><summary>実績：合意形成の失敗と、そこから確立した進め方</summary>
 <div class="evidence-body">
 
 #### 数百万円から億単位まで、規模を問わず合意形成を担ってきた

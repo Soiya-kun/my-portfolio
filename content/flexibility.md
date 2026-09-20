@@ -8,7 +8,7 @@
 
 そこで、メンバーの強みを活かしたうえで残る隙間を、水のように形を変えて自分が埋めてきました。外部エンジニアと進めた案件では、習熟度を踏まえて分担を組み直し、コアロジックを任せる一方で、マスタ管理基盤とUI/UXを自分が引き受けています。こうして、PM・設計・実装のどこに力を注ぐかを案件ごとに変え、チームとして完成まで進めてきました。
 
-<details class="evidence"><summary>このスキルの詳細</summary>
+<details class="evidence"><summary>詳細を読む</summary>
 <div class="evidence-body">
 
 #### 役割の割り振りだけでは、埋まらない部分が残る
@@ -24,7 +24,7 @@
 </div>
 </details>
 
-<details class="evidence"><summary>このスキルにまつわる実績：メンバーの強みに合わせて分担を組み替えた事例</summary>
+<details class="evidence"><summary>実績：メンバーの強みに合わせて分担を組み替えた事例</summary>
 <div class="evidence-body">
 
 #### 習熟度を踏まえ、開発の途中で役割を組み直す

@@ -6,7 +6,7 @@
 
 そこで、汎用フォームを必要最低限だけ汎用に実装すること、その利用結果をサポートし、業務フローの実態を俯瞰するエンジニアリングを適用することの2つを、解決案として検証しました。結果として、今も新しいフォームの運用が続き、拡張するエンジニアリングのアイディアが尽きない流れになっています。
 
-<details class="evidence"><summary>このスキルの詳細</summary>
+<details class="evidence"><summary>詳細を読む</summary>
 <div class="evidence-body">
 
 #### 仮説：使うこと自体が難しく、基礎知識がない限りスケールしない
@@ -32,7 +32,7 @@ RPAを導入したときに、教育を通じて利用者自身が開発でき�
 
 <a id="rpa-case"></a>
 
-<details class="evidence"><summary>このスキルにまつわる実績：備品発注フォームと、RPAによる工程管理ツール</summary>
+<details class="evidence"><summary>実績：備品発注フォームと、RPAによる工程管理ツール</summary>
 <div class="evidence-body">
 
 #### 備品発注フォーム：相談から1週間で実装する
