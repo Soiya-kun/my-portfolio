@@ -44,7 +44,9 @@ section > ul { line-height: 2; padding-left: 24px; }
 .gantt-label small { display: block; font-size: 10px; line-height: 1.6; color: var(--muted); margin-top: 4px; }
 .gantt-track, .gantt-years { display: grid; grid-template-columns: repeat(var(--months), minmax(0,1fr)); }
 .gantt-track { align-items: center; background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(100% / var(--years) - 1px), #dce3ee calc(100% / var(--years) - 1px), #dce3ee calc(100% / var(--years))); }
-.gantt-bar { display: block; height: 16px; background: #2459d3; border-radius: 2px; }
+/* バーを包含ブロックにする。そうしないと中の .sr-only が絶対配置のまま
+   スクロール領域の外へ出て、ページ全体に横スクロールを生む。 */
+.gantt-bar { display: block; position: relative; height: 16px; background: #2459d3; border-radius: 2px; }
 .gantt-bar.ongoing { background: repeating-linear-gradient(135deg,#2459d3 0,#2459d3 5px,#a8c5ff 5px,#a8c5ff 8px); }
 .gantt-header { min-height: 42px; background: #edf3ff; font-size: 12px; font-weight: bold; }
 .gantt-header > span, .gantt-years span { padding: 12px; }
