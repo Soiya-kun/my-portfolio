@@ -1,99 +1,51 @@
-<h2 class="requirement-heading"><span class="requirement-number">13</span>生成AIを活用した開発の実務経験・関心</h2>
+<h2 id="engineering-title">ソフトウェアアーキテクチャ</h2>
 
-<p class="section-lead">AIが実装する時代に、設計者が読むべきコードを明確にする</p>
+業務上の判断をコードのどこで読めるか、要件の変更をどのテストで確かめられるかを設計します。Goの受託案件では業務ルールと処理手順を整理し、TypeScriptの公開実装ではその考え方を要件定義や画面テストに広げています。
 
-<a id="ai-development"></a>
+<h3 id="web-app-framework">業務フローをテストとして実行する</h3>
 
-AIに任せる範囲は、モデルの進化に応じて広げてきました。PoCから実装、動作確認までをAIと進め、一人で月あたり約300件のPRを作成した時期もあります。ただし、重要な設計と、その意図が実装に表れているかを確かめる責任は、自分が担うと考えています。
+React・Honoで、売上登録から請求の締め・発行、入金管理までを扱う業務Webアプリの土台を作りました。例えば「月次の請求」の業務フローから「入金を記録する」シナリオを開き、その画面操作と、対応するバックエンド処理・SQLまでたどれます。
 
-その責任を、AIが書くすべてのコードを読むことで果たすのは現実的ではありません。そこで、GoのクリーンアーキテクチャとDDDを土台に、業務判断はdomain、手順はinteractorに集める規則を定め、その構造を固有のCIで検査しています。人が読むべき範囲を絞ったまま保つことで、AIの成果物が人間の手に負えるものであり続けるようにしています。
+- **要件とテストをつなぐ。** 業務フロー、担当者、画面操作をTypeScriptで記述し、同じ業務フローをブラウザのE2Eテストとして実行します。個別シナリオの結合テストでは、画面から業務処理までを同一プロセスで動かし、DBを差し替えます。
+- **業務の言葉を揃える。** 共通の単語帳から画面の文言を生成し、コードの命名も検査します。静的解析で処理を日本語に変換し、業務フローから実装をたどるブラウザ表示に使います。
+- **合意の経緯を追えるようにする。** 議事録の決定事項・課題や、現行業務から新業務への置き換えを、業務フローや画面・処理の定義に関連付けます。
 
-<details class="evidence"><summary>詳細を読む</summary>
+<p class="project-links"><a href="https://github.com/Soiya-kun/web-app-framework">GitHubで実装を見る</a><a href="https://zenn.dev/soiya_kun/articles/4cd62110beebd1">Zennで「TypeSafe要件定義」を読む</a></p>
+
+<h3 id="go-architecture">Goで業務ルールと処理手順の置き場を決める</h3>
+
+Goの業務システムでは、クリーンアーキテクチャを土台に、DDDのValue Objectやポリシーを取り入れました。状態や入力の制約・更新可否は `domain`、処理の順序と外部I/Oの調整は `interactor`、DBへの読み書きは `repository` で扱います。例えば「未提出のデータだけ編集できる」というルールは `domain` に置き、`interactor` を読めば更新の前にどの条件を確かめるかが分かります。
+
+入力境界や呼び出し方、命名などはCIで検査します。AIを使って実装した場合も、設計者が業務上の判断を読む箇所を絞り、DBまで通す自動テストと業務シナリオに沿った操作で振る舞いを確認します。
+
+[ZennでGoの設計事例を読む](https://zenn.dev/digeon/articles/e0e55bc9d18e89)
+
+<details class="evidence" id="ai-development">
+<summary>業務判断をコードとCIで確認する例</summary>
 <div class="evidence-body">
 
-#### 業務の意味と実装が一致するかは、人が見届ける
+以下は業務固有の名称を一般化した抜粋です。`interactor` では、対象・バージョン・編集可否を確認する順序が読めます。
 
-生成AIでコードを書くことが容易になっても、日本語で説明した業務ルールが実際にはどの条件や処理になっているのかは、設計者が自分の目で確かめる必要があります。重要な機能には、その対応を確かめるべきコードが必ずあります。
-
-#### 読む量ではなく、読む場所を決める
-
-読む量を増やす方向では、AIが生成するコードの量に追いつけません。そこで「読む量を増やす」のではなく、**読むべき場所を決めて、そこだけは必ず読める状態を保つ**方向で設計しました。
-
-#### domainで判断を、interactorで手順を読む
-
-GoのクリーンアーキテクチャとDDDを土台に、業務知識の置き場所と書き方を厳密に定めました。**domain層へ知識・制約・判断を集め、interactor層にはユースケースの手順を記述する**方針です。
-
-interactorで処理の順序と呼び出される業務判断を追い、その判断の中身はdomainで確認する。外部I/Oや入力変換の細部に埋もれることなく、業務の意味をこの2層だけで読み取れるようにしています。目指したのは、コードをそのまま業務のドキュメントとしても読める状態です。
-
-この読み方を維持するために、命名、分岐、入力境界、呼び出し方までを規則にし、固有のCIへ落とし込みました。CIで規則への適合を検査し、人は業務ルール自体が正しいかを読み、動作確認で実際の振る舞いを確かめる。それぞれが何を担保するのかを分けておくことで、AIが実装したコードでも設計意図との対応を追えるようにしています。
-
-#### 最適化してきたのは、書く速さではなく読む過程
-
-私が最適化してきたのは、AIがコードを書く速さではなく、重要なコードを人が読み、判断する過程です。
-
-設計の背景は、2026年2月に公開した[Go・DDD・クリーンアーキテクチャについての記事](https://zenn.dev/digeon/articles/e0e55bc9d18e89)でも説明しています。執筆当時のAI（GPT-5.2）を使って書いたもので、読みにくい箇所が残っている点はご容赦ください。記事の公開後、入力境界やinteractorの可読性については、さらに細かな規則とCIへ落とし込んでいます。
-
-</div>
-</details>
-
-<details class="evidence"><summary>実績：AI活用の実務と、確認方法・設計規則の中身</summary>
-<div class="evidence-body">
-
-#### PoCから実装まで、AIを開発の実務に組み込む
-
-3案件を並行していた時期には、Figma Makeでモックを作り、CodexのWeb版と組み合わせて実現可能性を検証しました。自ら設計した内容をそのまま実装へつなぎ、増員が難しい状況で開発を進めています。未知の技術領域を引き継いだ別案件では、o3を活用して納品まで到達しました。
-
-この時期は、5月から翌年1月にかけて、自分一人で月あたり約300件、通算で3,000件規模のPRを作成しています。いずれも当時の概数です。
-
-[3案件を並行した経緯は、08 / 越境した職務経験へ](#cross-functional)
-
-#### AIの進化に合わせて、確認方法も変えてきた
-
-AIへの任せ方を広げるのに合わせて、確認方法も段階的に変えてきました。コードを読む範囲、設計の詳しさ、自動テスト、別のAIによるレビューと操作確認。この組み合わせを、新しいモデルが出るたびに組み替えています。
-
-##### 初期：難しいReactコンポーネントを、全コードレビューで確かめる
-
-実装難度の高いReactコンポーネントをAIに実装させ、生成されたコードをすべて読み、妥当性を自分で評価しました。
-
-##### 中期：厳密な設計とレビューに、DBを通した自動テストを加える
-
-設計を人が厳密に行い、AIのコーディング結果も厳密にレビューしました。さらに、DBまで通して確認する自動テストを導入し、コードの読み取りに加えて動作を検証するようにしました。
-
-##### 後期：重要なコードに読む範囲を絞り、別のAIでも確認する
-
-設計の記述を簡略化する一方、重要なコードの可読性を保つCIを設け、人が読む範囲を絞りました。また、実装時のコンテキストを減らした別のAIにレビューや動作確認を任せるようにしました。
-
-##### 現在：実装の経緯を渡さず、業務シナリオから操作させる
-
-現在は、実装時のコンテキストを渡していない別のAIエージェント（Astra）に業務上のシナリオだけを伝え、システムを実際に操作させています。網羅性と厳密性に注意するよう指示したうえで、その操作の様子は自分で見続けます。AIが明らかに迷ったところにだけ、必要な情報を補います。
-
-業務シナリオによる操作確認に加えて、DBまで通す自動テストと、重要なdomain・interactorのコード確認も続けています。AIへの任せ方が変わっても、この3つは併用したままです。自動テストをいつ作成し、いつ実行するかは、今も運用を検討している段階です。
-
-#### 読み方を保つため、書き方をCIで検査する
-
-domainとinteractorの読み方を継続して保つため、次の規則を固有のCIへ落とし込んでいます。
-
-*   **業務判断をdomainに集める。** 知識を表す純粋関数と、可否・整合性を判定するpolicyを配置。外部I/Oを分離し、時刻などの環境依存値は引数で渡す。
-*   **interactorでは、意味のある手順を読む。** 業務分岐は名前付きのDecisionを介し、汎用的な動詞を避けて業務目的が分かる名前を付ける。値を返す呼び出しは意味の分かる変数で受け、使用箇所の近くに置く。
-*   **入力の解釈と制約をdomainの境界に閉じ込める。** interactorでのJSON復元・時刻の解釈・Value Objectの直接生成を制限し、用途の分かるdomain関数に集約する。
-*   **規則を自動検査につなげる。** interactorの構造・呼び出し・domain境界・可読性、repositoryの入力境界などをCIで検査。可読性の既存違反は記録し、新規・増加を検出しながら段階的に減らす仕組みを設ける。
-
-<details><summary>コードとCIで、何を確認するか（掲載案）</summary><p>複雑な更新処理の中から、対象・更新条件・編集可否を確認する部分を選びました。以下は実装をもとに名称を一般化し、周辺処理を省略した説明用の抜粋です。単独で動くコードではありません。</p><h4>interactor：業務上の確認を、手順として読む</h4><pre tabindex="0" aria-label="interactorの掲載用コード"><code>// 更新処理の一部：業務固有の名称を一般化し、前後の処理を省略
-if policyErr := record.EnsureTargetKind(current); policyErr != nil {
-    return nil, policyErr
+<pre tabindex="0" aria-label="interactorのコード例"><code>if err := record.EnsureTargetKind(current); err != nil {
+    return nil, err
 }
-if policyErr := recordupdate.EnsureExpectedVersion(current, selector); policyErr != nil {
-    return nil, policyErr
+if err := recordupdate.EnsureExpectedVersion(current, selector); err != nil {
+    return nil, err
 }
-if policyErr := record.EnsureVersionEditable(current); policyErr != nil {
-    return nil, policyErr
-}</code></pre><p>何を確認してから更新するのかを、呼び出し順で追います。個々の判定の詳細はdomainを読みます。</p><h4>domain：日本語のルールと照合する</h4><p>「未提出の状態だけ編集できる」という業務ルールなら、その条件が実装にも表れているかを設計者が確認します。</p><pre tabindex="0" aria-label="domainの掲載用コード"><code>// domain：名称を一般化した掲載用の抜粋
-func EnsureVersionEditable(header RecordHeader) error {
+if err := record.EnsureVersionEditable(current); err != nil {
+    return nil, err
+}</code></pre>
+
+`domain` では、編集可否の具体的な条件を確認できます。
+
+<pre tabindex="0" aria-label="domainのコード例"><code>func EnsureVersionEditable(header RecordHeader) error {
     if header.Status.Value() != recordvalue.StatusUnsubmitted {
         return ErrNotEditable
     }
     return nil
-}</code></pre><h4>CI：この読み方を保つために検査する</h4><ul class="practices"><li><code>check-interactor-calls</code>：呼び出し直後のエラー処理や、分岐の深さなどを検査。</li><li><code>check-interactor-domain-boundaries</code>：入力解釈やValue Object生成がinteractorに散らばることを制限。</li><li><code>check-interactor-readability</code>：命名、業務分岐、呼び出し結果の変数化・使用箇所への近接などを検査。</li><li><code>check-repository-boundaries</code>：永続化へ渡すdomainの入力境界を検査。</li></ul><p>CIで規則への適合を確認し、人は業務ルール自体が正しいかを読み、動作確認で実際の振る舞いを確かめます。可読性には既存違反を記録して新規・増加を検出する仕組みがあり、段階的に改善しています。</p></details>
+}</code></pre>
+
+CIでは、呼び出し直後のエラー処理や入力解釈の位置、業務分岐の書き方を検査します。既存の可読性違反は基準値を記録し、新規追加や件数の増加を検出します。
 
 </div>
 </details>
